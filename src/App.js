@@ -1,14 +1,6 @@
 import React, { useState } from "react"
 import "./App.css"
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Header from "./common/header/Header"
 import Pages from "./pages/Pages"
 import Data from "./components/Data"
@@ -77,33 +69,22 @@ function App() {
 
   return (
     <>
-      {/* <Route>
+     <Router>
         <Header CartItem={CartItem} />
         <Pages productItems={productItems} addToCart={addToCart} shopItems={shopItems} />
-        <Route path ='/cart' Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />
-        <Cart />
-        </Route>
-
+        <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />
+        
         <Routes>
+        
           <Route path='/' exact>
             
           </Route>
-          <Route path='/cart' >
+          <Route path='/cart' exact>
+           
           </Route>
         </Routes>
-        
-      </Router> */}
-      <BrowserRouter>
-      <Header CartItem={CartItem} />
-      <Pages productItems={productItems} addToCart={addToCart} shopItems={shopItems} />
-
-    <Routes>
-       
-        <Route path="/cart" CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} element={<Cart />} />
-      
-    </Routes>
-    <Footer />
-  </BrowserRouter>
+        <Footer />
+      </Router>
     </>
   )
 }
